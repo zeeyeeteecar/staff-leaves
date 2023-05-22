@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import YearBlockInfo from "./components/YearBlockInfo";
+import YearBlock from "./components/YearBlock";
 
 const Home: NextPage = () => {
   return (
     <>
-      <YearBlockInfo />
+      <YearBlock />
     </>
   );
 };
