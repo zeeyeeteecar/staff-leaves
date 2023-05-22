@@ -11,7 +11,7 @@ export default function DayOvMonth_Row({ getDaysInMonth, monthNumbers }: any) {
 
   return (
     <>
-      {monthNumbers.map((monthNumber: number, key: number) => {
+      {monthNumbers && monthNumbers.map((monthNumber: number, key: number) => {
         const daysOfMonth = getDaysInMonth(monthNumber, 2023);
         return (
           <>
