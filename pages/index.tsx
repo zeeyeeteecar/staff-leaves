@@ -1,5 +1,12 @@
-import React from "react";
+import type { NextPage } from "next";
+import YearBlock from "./components/YearBlock";
 
-export default function Index() {
-  return <div>index</div>;
-}
+const Home: NextPage = () => {
+  return (
+    <>
+      <YearBlock />
+    </>
+  );
+};
+
+export default Home;
