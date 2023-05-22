@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import moment from "moment";
 import { Center, VStack, Text, Box, Input, HStack } from "@chakra-ui/react";
 import DayOvMonth_Row from "./DayOvMonth_Row";
-import DayOvWeekTitle from "./DayOvWeekTitle";
 
 export default function YearBlock() {
   const getDaysInMonth = (month: number, year: number) =>
