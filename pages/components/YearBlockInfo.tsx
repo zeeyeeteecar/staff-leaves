@@ -43,7 +43,7 @@ export default function YearBlockInfo() {
                     staff.tb_staff_leave.map((leave: any, key: number) => {
                       return (
                         <>
-                          <li>{leave.staffLeaveType} == {moment(leave.staffLeaveDate).format('MMMM d, YYYY')}</li>
+                          <li>{leave.staffLeaveType} == {moment(leave.staffLeaveDate).format('MMM D, YYYY')}</li>
                         </>
                       );
                     })}
