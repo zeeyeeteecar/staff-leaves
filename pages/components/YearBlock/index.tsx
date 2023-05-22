@@ -6,7 +6,7 @@ import { IconButton } from "@chakra-ui/react";
 import { ExternalLinkIcon, DownloadIcon } from "@chakra-ui/icons";
 
 
-import YearBlock from "../YearBlock";
+import YearBlock from "./YearBlock";
 
 export default function Index() {
   return (

@@ -1,35 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
 import moment from "moment";
 import { Center, VStack, Text, Box, Input, HStack } from "@chakra-ui/react";
-import mysql from "mysql2/promise";
 
 import { IconButton } from "@chakra-ui/react";
 
-export default function DayOvMonth_Row({ getDaysInMonth, monthNumbers }) {
-  function onClick_showDate(monthday) {
+export default function DayOvMonth_Row({ getDaysInMonth, monthNumbers }: any) {
+  function onClick_showDate(monthday: number) {
     console.log(monthday);
   }
 
-  // create the connection to database
-  const connection = mysql.createConnection({
-    host: "n1nlmysql19plsk.secureserver.net",
-    user: "mysql_leaves_user",
-    database: "mysql_leaves",
-    password: "kokoKat72",
-  });
-
-  // simple query
-  // connection.query(
-  //   'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
-  //   function(err, results, fields) {
-  //     console.log(results); // results contains rows returned by server
-  //     console.log(fields); // fields contains extra meta data about results, if available
-  //   }
-  // );
-
   return (
     <>
-      {monthNumbers.map((monthNumber, key) => {
+      {monthNumbers.map((monthNumber: number, key: number) => {
         const daysOfMonth = getDaysInMonth(monthNumber, 2023);
         return (
           <>
@@ -38,7 +20,7 @@ export default function DayOvMonth_Row({ getDaysInMonth, monthNumbers }) {
                 Month ({monthNumber})
               </Box>
               {daysOfMonth &&
-                daysOfMonth.map((eachDay, key) => {
+                daysOfMonth.map((eachDay: any, key: any) => {
                   const weekday = moment(eachDay).day();
                   const monthday = moment(eachDay).date();
 

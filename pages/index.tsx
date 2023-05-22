@@ -1,12 +1,10 @@
 import type { NextPage } from "next";
 import YearBlock from "./components/YearBlock";
 
-const Home: NextPage = () => {
+export default function index() {
   return (
     <>
       <YearBlock />
     </>
   );
-};
-
-export default Home;
+}
