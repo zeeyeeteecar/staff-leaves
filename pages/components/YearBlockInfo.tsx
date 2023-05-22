@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import moment from "moment"
+import moment from "moment";
 
 export default function YearBlockInfo() {
   const [fetchData, setFetchData] = useState([]);
@@ -27,7 +27,7 @@ export default function YearBlockInfo() {
     dataFetch();
   }, []);
 
-console.log(fetchData)
+  console.log(fetchData);
   return (
     <>
       <div>{fetchData.length}</div>
@@ -37,12 +37,18 @@ console.log(fetchData)
             return (
               <>
                 <div key={key}>
-                   {staff.id} = {staff.userName} = {staff.firstName} = {staff.lastName}
-                    
-                    <li>{staff.tb_staff_leave}</li>
+                  {staff.id} = {staff.userName} = {staff.firstName} ={" "}
+                  {staff.lastName}
+                  {staff.tb_staff_leave &&
+                    staff.tb_staff_leave.map((leave: any, key: number) => {
+                      return (
+                        <>
+                          <li>{leave.staffLeaveType} == {moment(leave.staffLeaveDate).format('MMMM d, YYYY')}</li>
+                        </>
+                      );
+                    })}
                 </div>
-                {JSON.stringify(staff)}
-                
+               
               </>
             );
           })}
