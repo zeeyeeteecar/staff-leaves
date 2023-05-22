@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Tb_staff_info {
+  id        Int    @id @default(autoincrement())
+  userName  String @db.VarChar(11)
+  firstName String @db.VarChar(11)
+  lastName  String @db.VarChar(11)
+
+  tb_staff_leave Tb_staff_leave[]
+}
+
+model Tb_staff_leave {
+  ID             Int      @id @default(autoincrement())
+  staffID        Int
+  staffLeaveDate DateTime @db.Date
+
+  staff_info   Tb_staff_info @relation(fields: [staffID], references: [id])
+  
+}

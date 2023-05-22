@@ -1,8 +1,17 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { ThemeProvider, ColorModeProvider } from "@chakra-ui/react"
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ children }) => (
+  <ThemeProvider>
+    <ColorModeProvider>{children}</ColorModeProvider>
+  </ThemeProvider>
+)
 
-export default MyApp
+export default App
+
+// function MyApp({ Component, pageProps }: AppProps) {
+//   return <Component {...pageProps} />
+// }
+
+// export default MyApp
