@@ -5,13 +5,12 @@ import { Center, VStack, Text, Box, Input, HStack } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import { ExternalLinkIcon, DownloadIcon } from "@chakra-ui/icons";
 
-
+import StaffLeaveInfo from "./StaffLeaveInfo";
 import YearBlock from "./YearBlock";
 
 export default function Index() {
   return (
     <HStack width={"100%"} h="100vh" borderWidth={0} bgColor="">
-
       <VStack width={"full"} h="100%" borderWidth={0} p="10px" bgColor="white">
         <VStack borderWidth={1} width={"full"}>
           <HStack borderWidth={1}>
@@ -36,6 +35,7 @@ export default function Index() {
             alignContent="flex-start"
             alignItems={"flex-start"}
           >
+            <StaffLeaveInfo />
             <YearBlock />
           </VStack>
         </VStack>
